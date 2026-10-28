@@ -1,0 +1,28 @@
+.source-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  align-items: center;
+  color: #004b88;
+  padding: 0.2em 0;
+  border-radius: 0.3em;
+}
+.source-icon {
+  width: 1.5em;
+  margin: 0 0.5em;
+}
+
+.question-answer {
+  white-space: pre-wrap;
+}
+.question-answer a {
+  text-decoration: underline;
+}
+
+.source-container + .source-container {
+  margin-top: 0.5em;
+}
+
+.question-section + .question-section {
+  margin-top: 1em;
+}/*# sourceMappingURL=main.css.map */

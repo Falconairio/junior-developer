@@ -5,6 +5,7 @@ class Source(BaseModel):
     id: str
     title: str
     source: str
+    icon: str = ""
 
 
 class Data(BaseModel):

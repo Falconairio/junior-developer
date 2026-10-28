@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from gliner2 import GLiNER2
 
 from app.config import get_settings
-from app.routers import data, hello
+from app.routes.data import router as dataRouter
 
 settings = get_settings()
 
@@ -25,5 +25,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(hello.router)
-app.include_router(data.router)
+app.include_router(dataRouter.router)

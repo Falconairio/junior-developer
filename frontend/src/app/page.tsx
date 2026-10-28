@@ -1,13 +1,23 @@
 import Image from "next/image";
 import { Suspense } from "react";
 
-import Content from "@/components/Content";
+import Content from "./_components/Content";
+import { Question } from "../types/data"; 
+
+import '../styles/main.css';
 
 async function ContentList() {
   // TODO: Fetch the data from the backend (http://localhost:8000/data)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/data`);
+  const data: Question[] = await res.json();
+  console.log(data)
 
   // Each piece of content in the list should have its own Content component
-  return <Content />;
+  return data.map((el,ind) => {
+    //I wish there was a database id I could use here, and I could easily add one, but would need to update all the schemas,
+    //and I dont have time for that.
+    return <Content key={ind} question={el}/>
+  })
 }
 
 export default function Home() {
