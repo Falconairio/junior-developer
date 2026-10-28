@@ -5,6 +5,7 @@ class Source(BaseModel):
     id: str
     title: str
     source: str
+    #A personal addition, this is for holding the icon of the source site, if we can get it
     icon: str = ""
 
 
